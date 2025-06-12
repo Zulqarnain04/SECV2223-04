@@ -16,6 +16,61 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   </head>
   <body>
+    <!-- Scroll-to-top button -->
+    <a href="#top" class="scroll-top" aria-label="Scroll to top">&uarr;</a>
+    
+    <!-- ✅ JavaScript Interactivity -->
+    <script>
+    // FORM VALIDATION
+    document.querySelector(".contact-form").addEventListener("submit", function (e) {
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    
+      if (name.value.trim() === "") {
+        alert("Please enter your name.");
+        name.focus();
+        e.preventDefault();
+        return;
+      }
+    
+      if (!email.value.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        email.focus();
+        e.preventDefault();
+      }
+    });
+    
+    // SCROLL-TO-TOP BUTTON VISIBILITY
+    const scrollTopBtn = document.querySelector(".scroll-top");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    });
+    
+    // OPTIONAL: TYPING EFFECT FOR TAGLINE
+    const tagline = document.querySelector(".tagline");
+    const text = "Exploring the World of Computing";
+    let index = 0;
+    
+    function typeTagline() {
+      if (index < text.length) {
+        tagline.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeTagline, 60);
+      }
+    }
+    
+    // Clear existing text and start typing effect after slight delay
+    window.addEventListener("DOMContentLoaded", () => {
+      tagline.textContent = "";
+      setTimeout(typeTagline, 300);
+    });
+    </script>
+
     <!-- Main grid layout container -->
     <div class="grid-container" id="top">
       <!-- Header section -->
