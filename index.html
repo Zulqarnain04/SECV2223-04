@@ -25,6 +25,12 @@
       opacity: 1;
       transform: translateY(0);
     }
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: 2px solid #9333ea;
+      outline-offset: 2px;
+    }
   </style>
 </head>
 
@@ -38,7 +44,7 @@
     </div>
 
     <!-- Left Sidebar -->
-    <nav class="left">
+    <nav class="left" aria-label="Main navigation">
       <a href="#intro"><i class="fas fa-user"></i> Introduction</a>
       <a href="#biography"><i class="fas fa-address-card"></i> Biography</a>
       <a href="#project"><i class="fas fa-laptop-code"></i> My Project</a>
@@ -141,13 +147,15 @@
         <div class="contact-section">
           <div class="contact-info">
             <h2>Feel free to contact me</h2>
-            <form class="contact-form" action="#" method="post">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required />
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-              <button type="submit">Submit</button>
-            </form>
+            <form class="contact-form" action="#" method="post" aria-label="Contact Form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          
+            <button type="submit">Submit</button>
+          </form>
           </div>
           <div class="contact-table">
             <table>
@@ -169,7 +177,7 @@
   </div>
 
   <!-- Scroll to top button -->
-  <a href="#top" class="scroll-top" aria-label="Scroll to top">&uarr;</a>
+<a href="#top" class="scroll-top" aria-label="Scroll to top" role="button">&uarr;</a>
 
   <!-- ✅ JavaScript Interactivity -->
   <script>
