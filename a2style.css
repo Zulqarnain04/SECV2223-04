@@ -17,9 +17,7 @@
 
 body,
 html {
-  background-color: #f8fafc;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-color: #f9fafb;
   color: #1f2937;
   scroll-behavior: smooth;
   overflow-x: hidden;
